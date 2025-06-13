@@ -1,0 +1,17 @@
+# Ignore Python cache
+__pycache__/
+**/__pycache__/
+
+# Ignore local virtual environment
+venv/
+
+# Ignore Airflow logs but keep the folder
+logs/*
+!logs/.gitkeep
+
+# Ignore virtual environment files
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.pid
