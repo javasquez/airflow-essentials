@@ -21,39 +21,32 @@ This project demonstrates how to orchestrate data pipelines using **Apache Airfl
 ## 📁 Project Structure
 
 ORCHESTRATION-WITH-AIRFLOW/
-│
-├── config/                          # Custom configuration files (optional)
-│
-├── dags/                            # All DAG definitions
-│   ├── bash_scripts/                # Bash scripts used in BashOperator
-│   │   └── taskA.sh
-│   ├── dag_python_branching_catchup.py      # DAG with catchup and weekday branching
-│   ├── dag_python_branching_operator.py     # DAG using BranchPythonOperator + Variable
-│   ├── dag_python_branching_taskgroup.py    # DAG using TaskGroup to group related tasks
-│   ├── dag_python_database.py               # DAG that interacts with external SQL Server
-│   ├── dag_python_operator.py               # Basic PythonOperator example with kwargs
-│   ├── dag_python_pipeline.py               # pandas pipeline: read, clean, group
-│   ├── dag_xcoms.py                         # DAG demonstrating XCom usage
-│   ├── dag.py                               # Generic starter DAG
-│   └── modern_dag.py                        # DAG with context manager and Bash script
-│
-├── data/                           # Local input/output data for the DAGs
-│   ├── inputs/
-│   │   └── insurance.csv            # Source CSV used in pandas pipeline
-│   └── outputs/
-│       └── smokers.csv             # Output generated from pipeline
-│
-├── database/                        # Optional: custom database scripts or metadata
-│
-├── logs/                            # Airflow logs (auto-generated at runtime)
-│
-├── plugins/                         # Place for custom operators, hooks, macros
-│
-├── venv/                            # Python virtual environment (optional if using system Python)
-│
-├── .env                             # Environment variables (used by docker-compose)
-├── docker-compose.yaml              # Official multi-service Docker setup for Airflow
-└── README.md                        # Documentation for the project
+
+- orchestration-with-airflow/
+  - dags/
+    - dag_python_branching_catchup.py  # DAG with catchup and weekday branching
+    - dag_python_branching_operator.py # DAG using BranchPythonOperator + Variable
+    - dag_python_branching_taskgroup.py # DAG using TaskGroup to group tasks
+    - dag_python_database.py            # DAG that interacts with SQL Server
+    - dag_python_operator.py            # Basic PythonOperator with kwargs
+    - dag_python_pipeline.py            # pandas pipeline: read, clean, group
+    - dag_xcoms.py                      # DAG demonstrating XCom usage
+    - dag.py                            # Starter DAG
+    - modern_dag.py                     # BashOperator with context manager
+  - bash_scripts/
+    - taskA.sh
+  - data/
+    - inputs/
+      - insurance.csv                   # CSV used in pandas pipeline
+    - outputs/
+      - smokers.csv                    # Generated from pipeline
+  - database/                           # Optional DB scripts or metadata
+  - logs/                               # Airflow logs (ignored or .gitkeep only)
+  - plugins/                            # Custom operators, hooks, etc.
+  - venv/                               # Virtual environment (ignored)
+  - .env                                # Environment variables for Docker
+  - docker-compose.yaml                 # Official Airflow Docker setup
+  - README.md                           # Project documentation
 
 
 
