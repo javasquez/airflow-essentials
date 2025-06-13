@@ -43,7 +43,6 @@ ORCHESTRATION-WITH-AIRFLOW/
   - database/                           # Optional DB scripts or metadata
   - logs/                               # Airflow logs (ignored or .gitkeep only)
   - plugins/                            # Custom operators, hooks, etc.
-  - venv/                               # Virtual environment (ignored)
   - .env                                # Environment variables for Docker
   - docker-compose.yaml                 # Official Airflow Docker setup
   - README.md                           # Project documentation
